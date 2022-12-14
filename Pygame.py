@@ -1136,21 +1136,22 @@ def main_loop():
                            if i >= 1/4:
                                i -= 1/4
                if event.type == pygame.MOUSEBUTTONDOWN:
-                   if ball.right > mouse_pos[0] > ball.left and ball.top < mouse_pos[1] < ball.bottom:
-                       ball.center = random.choice((hole2.center, hole4.center, hole6.center, hole8.center,
-                                                    hole10.center, hole12.center, hole14.center, hole16.center))
-                       click_counter += 1
-                       b = 0
-                       # elif o2_text_rect.right > mouse_pos[0] > o2_text_rect.left \
-                       # and o2_text_rect.bottom > mouse_pos[1] > i2_text_rect.top:
-                       # info()
-                       # elif o_text_rect.right > mouse_pos[0] > o_text_rect.left \
-                       # and s_text_rect.bottom > mouse_pos[1] > o_text_rect.top:
-                       # options()
-                   elif click_counter <= 5:
-                       click_counter = 0
-                   elif click_counter > 5:
-                       click_counter -= 5
+                   if event.button == 1:
+                    if ball.right > mouse_pos[0] > ball.left and ball.top < mouse_pos[1] < ball.bottom:
+                        ball.center = random.choice((hole2.center, hole4.center, hole6.center, hole8.center,
+                                                        hole10.center, hole12.center, hole14.center, hole16.center))
+                        click_counter += 1
+                        b = 0
+                        # elif o2_text_rect.right > mouse_pos[0] > o2_text_rect.left \
+                        # and o2_text_rect.bottom > mouse_pos[1] > i2_text_rect.top:
+                        # info()
+                        # elif o_text_rect.right > mouse_pos[0] > o_text_rect.left \
+                        # and s_text_rect.bottom > mouse_pos[1] > o_text_rect.top:
+                        # options()
+                    elif click_counter <= 5:
+                        click_counter = 0
+                    elif click_counter > 5:
+                        click_counter -= 5
 
            clock.tick(60)
            i -= 1/60
